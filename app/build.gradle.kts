@@ -7,6 +7,15 @@ android {
     namespace = "com.tlw.perfisystask2"
     compileSdk = 34
 
+    signingConfigs {
+        create("release") {
+            keyAlias = "key0"
+            keyPassword = "tlw@24"
+            storePassword = "tlw@24"
+            storeFile = file("singned_key.jks")
+        }
+    }
+
     defaultConfig {
         applicationId = "com.tlw.perfisystask2"
         minSdk = 24
@@ -27,6 +36,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
