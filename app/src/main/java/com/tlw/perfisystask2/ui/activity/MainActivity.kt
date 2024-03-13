@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Favorite
@@ -12,6 +14,7 @@ import androidx.compose.material.icons.outlined.AccountCircle
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material3.Scaffold
+import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.tlw.perfisystask2.model.BottomNavItems
 import com.tlw.perfisystask2.ui.navigation.BottomNavigationBar
@@ -49,8 +52,11 @@ class MainActivity : ComponentActivity() {
                     navController = navController,
                     onItemClick = { navController.navigate(it.route) }
                 )
-            }) {
-                Navigation(navController = navController)
+            }) {innerPadding ->
+                // Apply the padding globally to the whole BottomNavScreensController
+                Box(modifier = Modifier.padding(innerPadding)) {
+                    Navigation(navController = navController)
+                }
             }
         }
     }

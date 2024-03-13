@@ -10,5 +10,8 @@ val Purple40 = Color(0xFF6650a4)
 val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
+val ThemeColor = Color(0xFF27345D)
+val AppBarColor = Color(0xFFF3F6FB)
+val NavigationColor = Color(0xFF27345E)
 val BodyText = Color(0xFF000000)
 val HintText = Color(0xFF9B9B9B)

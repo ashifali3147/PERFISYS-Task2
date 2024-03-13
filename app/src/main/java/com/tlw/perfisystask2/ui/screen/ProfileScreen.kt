@@ -98,7 +98,7 @@ fun ProfileScreen() {
         )
         Spacer(modifier = Modifier.height(50.dp))
         Button(shape = RoundedCornerShape(5.dp), colors = ButtonDefaults.buttonColors(
-            containerColor = HintText
+            containerColor = Color.LightGray
         ), onClick = { /*TODO*/ }) {
             Text(text = "LOGOUT", color = Color.Black)
         }
